@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IoKgtdXezdRi41uZ7I6rszbPRQHzGAeDqvQQkcT7QA1dBdDYQ4Yd0N4X5gmLACPasBtLXLCsrYd3r+tJN7tkrw==",
+  "dgSpecHash": "SwgQ08uhuxfBt6xioLltDYqBnvE2k+Ub2NSpbkhTkjJLQwJKgMbalFB8hCxqkY2DLzXrAnYFThXDqnrZXBABLg==",
   "success": true,
-  "projectFilePath": "/Users/ivan/Projects/LoopsAndConditionals/DoWhileStatement/DoWhileStatement.csproj",
+  "projectFilePath": "/Users/ivan/Projects/Technical-University-Sofia-Exercises/Programing_Basics_C_Sharp/LoopsAndConditionalStatements/DoWhileStatement/DoWhileStatement.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

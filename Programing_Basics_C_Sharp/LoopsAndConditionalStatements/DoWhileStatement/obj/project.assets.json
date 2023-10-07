@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ivan/Projects/LoopsAndConditionals/DoWhileStatement/DoWhileStatement.csproj",
+      "projectUniqueName": "/Users/ivan/Projects/Technical-University-Sofia-Exercises/Programing_Basics_C_Sharp/LoopsAndConditionalStatements/DoWhileStatement/DoWhileStatement.csproj",
       "projectName": "DoWhileStatement",
-      "projectPath": "/Users/ivan/Projects/LoopsAndConditionals/DoWhileStatement/DoWhileStatement.csproj",
+      "projectPath": "/Users/ivan/Projects/Technical-University-Sofia-Exercises/Programing_Basics_C_Sharp/LoopsAndConditionalStatements/DoWhileStatement/DoWhileStatement.csproj",
       "packagesPath": "/Users/ivan/.nuget/packages/",
-      "outputPath": "/Users/ivan/Projects/LoopsAndConditionals/DoWhileStatement/obj/",
+      "outputPath": "/Users/ivan/Projects/Technical-University-Sofia-Exercises/Programing_Basics_C_Sharp/LoopsAndConditionalStatements/DoWhileStatement/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ivan/.nuget/NuGet/NuGet.Config"

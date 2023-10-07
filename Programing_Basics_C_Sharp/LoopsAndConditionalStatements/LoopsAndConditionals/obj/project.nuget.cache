@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JY8zUTlD2GTgorvQ284nM0CXvfdmBx//ekiy3F07YECQaRl/txlwkLSCfGCYIsXkXK+JCgJI8V18zP1CC9fsFQ==",
+  "dgSpecHash": "FedQT7AmXcdIzFHIDRzB7PBrae4KhpXaPmvoThr3Q7NviNLSIcy8C2MWuHWqYTg1FDQ+p0VH7vx3kgkDvl9Diw==",
   "success": true,
-  "projectFilePath": "/Users/ivan/Projects/LoopsAndConditionals/LoopsAndConditionals/BiggestNumber.csproj",
+  "projectFilePath": "/Users/ivan/Projects/Technical-University-Sofia-Exercises/Programing_Basics_C_Sharp/LoopsAndConditionalStatements/LoopsAndConditionals/BiggestNumber.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

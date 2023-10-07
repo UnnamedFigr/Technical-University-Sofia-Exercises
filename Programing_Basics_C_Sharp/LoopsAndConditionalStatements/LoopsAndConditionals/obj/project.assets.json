@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ivan/Projects/LoopsAndConditionals/LoopsAndConditionals/BiggestNumber.csproj",
+      "projectUniqueName": "/Users/ivan/Projects/Technical-University-Sofia-Exercises/Programing_Basics_C_Sharp/LoopsAndConditionalStatements/LoopsAndConditionals/BiggestNumber.csproj",
       "projectName": "BiggestNumber",
-      "projectPath": "/Users/ivan/Projects/LoopsAndConditionals/LoopsAndConditionals/BiggestNumber.csproj",
+      "projectPath": "/Users/ivan/Projects/Technical-University-Sofia-Exercises/Programing_Basics_C_Sharp/LoopsAndConditionalStatements/LoopsAndConditionals/BiggestNumber.csproj",
       "packagesPath": "/Users/ivan/.nuget/packages/",
-      "outputPath": "/Users/ivan/Projects/LoopsAndConditionals/LoopsAndConditionals/obj/",
+      "outputPath": "/Users/ivan/Projects/Technical-University-Sofia-Exercises/Programing_Basics_C_Sharp/LoopsAndConditionalStatements/LoopsAndConditionals/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ivan/.nuget/NuGet/NuGet.Config"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "el1rPJv+NeLrszD6p2VMA9BJ0P2dzhW/AOWYvaL+VHuAqZtckkXGUT7ebMtYwstf5QBQrq0lDeuGCF35UhcQ7g==",
+  "dgSpecHash": "ea36jvCM63tQTaAZuWQdOM5mJsukZnqRTcJyHUtlBZYvg/0IZqOssmXMb8pijMLXCBqaQgfzB8qsUvQl2h1uJQ==",
   "success": true,
-  "projectFilePath": "/Users/ivan/Projects/LoopsAndConditionals/NumberToLetterFromTheAlphabet/NumberToLetterFromTheAlphabet.csproj",
+  "projectFilePath": "/Users/ivan/Projects/Technical-University-Sofia-Exercises/Programing_Basics_C_Sharp/LoopsAndConditionalStatements/NumberToAlphabetLetter/NumberToAlphabetChar.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

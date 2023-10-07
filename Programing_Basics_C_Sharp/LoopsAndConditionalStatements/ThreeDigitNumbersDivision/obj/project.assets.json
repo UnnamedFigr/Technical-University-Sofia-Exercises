@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ivan/Projects/LoopsAndConditionals/ThreeDigitNumbersDivision/ThreeDigitNumbersDivision.csproj",
-      "projectName": "ThreeDigitNumbersDivision",
-      "projectPath": "/Users/ivan/Projects/LoopsAndConditionals/ThreeDigitNumbersDivision/ThreeDigitNumbersDivision.csproj",
+      "projectUniqueName": "/Users/ivan/Projects/Technical-University-Sofia-Exercises/Programing_Basics_C_Sharp/LoopsAndConditionalStatements/ThreeDigitNumbersDivision/ThreeDigitNumberDivision.csproj",
+      "projectName": "ThreeDigitNumberDivision",
+      "projectPath": "/Users/ivan/Projects/Technical-University-Sofia-Exercises/Programing_Basics_C_Sharp/LoopsAndConditionalStatements/ThreeDigitNumbersDivision/ThreeDigitNumberDivision.csproj",
       "packagesPath": "/Users/ivan/.nuget/packages/",
-      "outputPath": "/Users/ivan/Projects/LoopsAndConditionals/ThreeDigitNumbersDivision/obj/",
+      "outputPath": "/Users/ivan/Projects/Technical-University-Sofia-Exercises/Programing_Basics_C_Sharp/LoopsAndConditionalStatements/ThreeDigitNumbersDivision/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ivan/.nuget/NuGet/NuGet.Config"
