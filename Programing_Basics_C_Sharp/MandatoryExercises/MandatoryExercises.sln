@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NthElementsOfSequence", "Nt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvenOddSumOnRows", "EvenOddSumOnRows\EvenOddSumOnRows.csproj", "{41992779-6F35-4E5D-9E55-898CA42B3C33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotsCommasIntegers", "DotsCommasIntegers\DotsCommasIntegers.csproj", "{22232A5D-48B2-475D-AE60-779D91830481}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{41992779-6F35-4E5D-9E55-898CA42B3C33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41992779-6F35-4E5D-9E55-898CA42B3C33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41992779-6F35-4E5D-9E55-898CA42B3C33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22232A5D-48B2-475D-AE60-779D91830481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22232A5D-48B2-475D-AE60-779D91830481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22232A5D-48B2-475D-AE60-779D91830481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22232A5D-48B2-475D-AE60-779D91830481}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
