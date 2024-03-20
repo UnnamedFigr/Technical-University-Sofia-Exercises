@@ -22,6 +22,5 @@ namespace HtmlCrawler2._2
         {
             return "You have performed " + actions.ToString() + " actions";
         }
-        public const string QUERY_RESULT_MSG = "Your query result is:\n";
     }
 }

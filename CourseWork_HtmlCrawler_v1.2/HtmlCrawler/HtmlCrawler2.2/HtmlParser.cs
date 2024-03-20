@@ -17,8 +17,7 @@ namespace HtmlCrawler2._2
         public void ParseHTML(string htmlContent)
         {
             root = new Node("html");
-            nodes = new List<Node>();
-            nodes.Add(root);
+            nodes = new List<Node>() { root };
 
             int position = 0;
             int length = htmlContent.Length;
@@ -221,11 +220,10 @@ namespace HtmlCrawler2._2
                     fullContent.AppendLine();
                     fullContent.Append(new string(' ', depth * 4));
                 }
-
                 fullContent.Append($"</{node.Tag}>");
                 fullContent.AppendLine();
             }
-        }
+        }       
     }    
 }
 

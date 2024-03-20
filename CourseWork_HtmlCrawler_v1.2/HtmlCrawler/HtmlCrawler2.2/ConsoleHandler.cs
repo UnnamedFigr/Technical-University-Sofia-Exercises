@@ -50,7 +50,6 @@ namespace HtmlCrawler2._2
                     break;
                 }
                
-                Console.WriteLine(ApplicationMessages.QUERY_RESULT_MSG);
                 _queryProcessor.OutputQuery(input);              
             }
         }

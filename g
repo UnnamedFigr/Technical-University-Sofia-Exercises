@@ -1,0 +1,138 @@
+[33mcommit 2c18428e6bb87717ad8135fc91eaefff83f02701[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Merge: b22c24d bfd9b36
+Author: Ivan Drazhev <justdrazhev1@gmail.com>
+Date:   Wed Mar 13 20:15:40 2024 +0200
+
+    Merge branch 'main' of https://github.com/UnnamedFigr/Technical-University-Sofia-Exercises
+
+[33mcommit b22c24d824e9c2c28207b801b97c5fd8829819ec[m
+Author: Ivan Drazhev <justdrazhev1@gmail.com>
+Date:   Wed Mar 13 20:15:08 2024 +0200
+
+    Adding patch file
+
+[33mcommit bfd9b369e92554df712fcf7a8fab2698e77dd803[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Ivan Drazhev <121351631+UnnamedFigr@users.noreply.github.com>
+Date:   Wed Jan 10 16:04:14 2024 +0200
+
+    Add files via upload
+
+[33mcommit 92a725c2c78b200217afdefd8a8e9d51fbd39916[m
+Author: UnnamedFigr <justdrazhev1@gmail.com>
+Date:   Wed Jan 10 16:03:02 2024 +0200
+
+    Initial commit
+
+[33mcommit cc411fc5405c01a6c9bc38f705fd5725e6e3bf7f[m
+Author: UnnamedFigr <justdrazhev1@gmail.com>
+Date:   Fri Nov 17 11:44:50 2023 +0200
+
+    moved to upper folder
+
+[33mcommit b69353571a2cb4eb9d7114cc51e51112fc442a65[m
+Author: UnnamedFigr <justdrazhev1@gmail.com>
+Date:   Fri Nov 17 11:41:56 2023 +0200
+
+    initial commit
+
+[33mcommit c4d4faa05ea4bee4ede2b4f108bfffc147cf0119[m
+Author: UnnamedFigr <justdrazhev1@gmail.com>
+Date:   Tue Nov 14 22:56:29 2023 +0200
+
+    Initial commit
+
+[33mcommit c9945f54e845964f54393925a15e5688c209c8c5[m
+Author: UnnamedFigr <justdrazhev1@gmail.com>
+Date:   Fri Nov 10 01:25:20 2023 +0200
+
+    initial commit
+
+[33mcommit 39a5fecc2922bf15be5c7bdc3bd51f899a43ec48[m
+Author: UnnamedFigr <justdrazhev1@gmail.com>
+Date:   Fri Nov 10 01:15:24 2023 +0200
+
+    initial commit
+
+[33mcommit e010c5b3a8a2f39b0730a68a6bcfe8467e6e703e[m
+Author: UnnamedFigr <justdrazhev1@gmail.com>
+Date:   Thu Nov 9 12:26:27 2023 +0200
+
+    launched from windows OS
+
+[33mcommit 569dac0a0ef2da3594549e5e7d2c7fa0b141f0f5[m
+Author: Ivan Drazhev <ivan@Ivans-MacBook-Air.local>
+Date:   Tue Oct 17 00:58:27 2023 +0300
+
+    Initial commit
+
+[33mcommit b7f980287452a0bf155be4956930d2625657f9ee[m
+Author: Ivan Drazhev <ivan@Ivans-MacBook-Air.local>
+Date:   Tue Oct 17 00:46:36 2023 +0300
+
+    Initial commit
+
+[33mcommit 1abb6c96ad8808587724e0e935cf96008077f1b5[m
+Author: Ivan Drazhev <ivan@Ivans-MacBook-Air.local>
+Date:   Tue Oct 10 17:31:45 2023 +0300
+
+    Initial commit
+
+[33mcommit 490da82af57a424c8149398da7cdd22d768bd881[m
+Author: Ivan Drazhev <ivan@Ivans-MacBook-Air.local>
+Date:   Tue Oct 10 00:23:14 2023 +0300
+
+    Initial commit
+
+[33mcommit c7de44f9bdda5ecfced59ebedce21f1418f45e48[m
+Author: Ivan Drazhev <ivan@Ivans-MacBook-Air.local>
+Date:   Mon Oct 9 13:13:32 2023 +0300
+
+    Initial commit
+
+[33mcommit a04696d673ca3dc2c23d695e4e81d15490566f46[m
+Author: Ivan Drazhev <ivan@Ivans-MacBook-Air.local>
+Date:   Sun Oct 8 17:07:52 2023 +0300
+
+    initial commit
+
+[33mcommit 064fd4c45ced41f42d7342b72897e2e5087e74f9[m
+Author: Ivan Drazhev <ivan@Ivans-MacBook-Air.local>
+Date:   Sun Oct 8 15:37:31 2023 +0300
+
+    Added exercises
+
+[33mcommit 9a1b4bd7091eca3f485fcf40d2d0e6bfb5b840e2[m
+Author: Ivan Drazhev <ivan@Ivans-MacBook-Air.local>
+Date:   Sat Oct 7 23:50:45 2023 +0300
+
+    Added to main branch
+
+[33mcommit 69fd93964978d001ab3dc8756d8f77904a3a3261[m
+Author: Ivan Drazhev <ivan@Ivans-MacBook-Air.local>
+Date:   Sat Oct 7 23:44:26 2023 +0300
+
+    Added to the branch
+
+[33mcommit 5ed6c3cecbb671fa4ede2f00d552d67a148bcf74[m
+Author: Ivan Drazhev <ivan@Ivans-MacBook-Air.local>
+Date:   Sat Oct 7 21:55:04 2023 +0300
+
+    Moved to subfolder
+
+[33mcommit 9a8b222a741606611550a30f934a3966fe9b730f[m
+Author: Ivan Drazhev <121351631+UnnamedFigr@users.noreply.github.com>
+Date:   Sat Oct 7 17:34:23 2023 +0300
+
+    Rename 1.Programming Basics C#/ThreeDigitNumbersDivisionProgram.cs/Programs.cs to ThreeDigitNumbersDivision/Program.cs
+
+[33mcommit aacf86cf4e8b6dcb9b3b39ef4214b490c7243b20[m
+Author: Ivan Drazhev <121351631+UnnamedFigr@users.noreply.github.com>
+Date:   Sat Oct 7 17:31:56 2023 +0300
+
+    Rename ThreeDigitNumbersDivision/Program.cs to 1.Programming Basics C#/ThreeDigitNumbersDivisionProgram.cs/Programs.cs
+
+[33mcommit 85fdd7e1963864b55bded03a74c5eb8df2dbad3c[m
+Author: Ivan Drazhev <ivan@Ivans-MacBook-Air.local>
+Date:   Sat Oct 7 16:43:13 2023 +0300
+
+    initial commit

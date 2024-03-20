@@ -10,6 +10,12 @@ namespace HtmlCrawler2._2
     {
         public string? Key { get; set; }
         public string? Value { get; set; }
+        public Attribute() {}
+        public Attribute(string key, string value)
+        {
+            this.Key = key;
+            this.Value = value;
+        }
     }
     public class Node 
     {
