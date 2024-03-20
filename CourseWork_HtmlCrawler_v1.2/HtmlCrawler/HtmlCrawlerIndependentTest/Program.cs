@@ -15,7 +15,11 @@
             parser.ParseHTML(content);
             Node htmlNode = parser.GetRootNode();
             QueryHandler handler = new QueryHandler(htmlNode);
+<<<<<<< HEAD
             handler.HandleQuery("PRINT //");
+=======
+            handler.HandleQuery("PRINT //html");
+>>>>>>> f0a4729 (Added new project)
             //string document = parser.GetFullHtmlContent(htmlNode);
             //Console.WriteLine(document);
 
