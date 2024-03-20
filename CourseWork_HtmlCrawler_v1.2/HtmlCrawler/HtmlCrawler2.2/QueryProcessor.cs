@@ -20,16 +20,15 @@ namespace HtmlCrawler2._2
             int indexOfSpace = 0;
             string actionName = "";
             string query = "";
+            object? action;
             try
             {
                 indexOfSpace = fullQuery.CustomIndexOf(" ");
                 actionName = fullQuery.CustomSubstring(0, indexOfSpace).ToUpper();
                 query = fullQuery.CustomSubstring(indexOfSpace + 1);
-            }catch(ArgumentOutOfRangeException AOREx) 
-            {
-                Console.WriteLine(AOREx.Message.ToString());
-            }
-            QueryAction action = (QueryAction)Enum.Parse(typeof(QueryAction), actionName);
+                
+            if(!Enum.TryParse(typeof(QueryAction), actionName, out action))
+                { throw new ArgumentOutOfRangeException(paramName: actionName); }
             switch(action)
             {
                 case QueryAction.PRINT:
@@ -42,6 +41,15 @@ namespace HtmlCrawler2._2
 
                 default:
                     throw new InvalidQueryException("The query you provide is not in a correct format");
+            }
+            }
+            catch (ArgumentOutOfRangeException AOREx)
+            {
+                Console.WriteLine("Invalid Argument.\nTry again!");
+            }
+            catch (InvalidQueryException IQEX)
+            {
+                Console.WriteLine(IQEX.Message.ToString());
             }
         }
         public void RootNodeSet(Node root)
@@ -60,7 +68,7 @@ namespace HtmlCrawler2._2
                 return result;
             }
             result = Traverse(root, segments, 1, 0);
-            if(result.Count() == 0) { result.Add("Wrong input or there is no such node in the document!"); }
+            if(result == null || result.Count() == 0 ) { throw new ArgumentOutOfRangeException(); }
             return result;
         }
         private string[] SplitQuery(string query)
@@ -70,8 +78,10 @@ namespace HtmlCrawler2._2
             int start = 0;
             for(int i = 0; i < query.Length; i++) 
             {
-                if (query[i] == '/' && query[i + 1] == '/'
-                    && i < 2)
+                if (query.Length < 2) return new string[0];
+                if (query.CustomIndexOf("/") == -1) return new string[0];
+                if (i < 2 && query[i] == '/' && 
+                    query[i + 1] == '/' )
                 {
                     start += 2;
                     
@@ -100,7 +110,7 @@ namespace HtmlCrawler2._2
                     }
 
                 }
-                if (ContainsSeparators(query, i))
+                if (i < query.Length && ContainsSeparators(query, i))
                 {
                     segments.Add(query.CustomSubstring(start, i - start));
                     i += 1;
@@ -132,8 +142,9 @@ namespace HtmlCrawler2._2
 
         private List<string> Traverse(Node node, string[] segments, int index, int depth)
         {
+            if (segments.Length == 0) return null;
             List<string> matches = new List<string>();
-
+            
             string indentation = new string(' ', depth * 2);
             if (index == segments.Length)
             {
@@ -143,9 +154,10 @@ namespace HtmlCrawler2._2
                 }
                 if(node.Tag == segments[0])
                 {
-                    var parser = new HTMLParser();
-                    string content = parser.GetFullHtmlContent(root);
-                    matches.Add(content);
+                    foreach (Node child in node.Children)
+                    {
+                        matches.AddRange(Traverse(child, segments, index, depth + 1));
+                    }
                 }
                 return matches;
             }
@@ -220,48 +232,48 @@ namespace HtmlCrawler2._2
             }
             return matches;
         }
-        private List<string> PrintNode(Node node, int depth)
-        {
-            List<string> output = new List<string>();
-            string indentation = new string(' ', depth * 4);
+        //private List<string> PrintNode(Node node, int depth)
+        //{
+        //    List<string> output = new List<string>();
+        //    string indentation = new string(' ', depth * 4);
 
-            // Concatenate attributes into a single string
-            if (node.Attributes.Count != 0)
-            {
-                string attributes = "";
-                bool isFirst = true;
-                foreach (var attr in node.Attributes)
-                {
-                    if (isFirst)
-                    {
-                        attributes += $"{attr.Key}='{attr.Value}'";
-                        isFirst = false;
-                    }
-                    else
-                    {
-                        attributes += $" {attr.Key}='{attr.Value}'";
-                    }
-                }
+        //    // Concatenate attributes into a single string
+        //    if (node.Attributes.Count != 0)
+        //    {
+        //        string attributes = "";
+        //        bool isFirst = true;
+        //        foreach (var attr in node.Attributes)
+        //        {
+        //            if (isFirst)
+        //            {
+        //                attributes += $"{attr.Key}='{attr.Value}'";
+        //                isFirst = false;
+        //            }
+        //            else
+        //            {
+        //                attributes += $" {attr.Key}='{attr.Value}'";
+        //            }
+        //        }
 
-                output.Add($"{indentation}  <{node.Tag} {attributes}>");
-            }
-            else
-            {
-                output.Add($"{indentation}  <{node.Tag}>");
-            }
-            if (!string.IsNullOrEmpty(node.Content))
-            {
-                output.Add($"{indentation}      {node.Content}");
-            }
+        //        output.Add($"{indentation}  <{node.Tag} {attributes}>");
+        //    }
+        //    else
+        //    {
+        //        output.Add($"{indentation}  <{node.Tag}>");
+        //    }
+        //    if (!string.IsNullOrEmpty(node.Content))
+        //    {
+        //        output.Add($"{indentation}      {node.Content}");
+        //    }
 
-            foreach (var child in node.Children)
-            {
-                output.AddRange(PrintNode(child, depth + 1));
-            }
+        //    foreach (var child in node.Children)
+        //    {
+        //        output.AddRange(PrintNode(child, depth + 1));
+        //    }
 
-            output.Add($"{indentation}  </{node.Tag}>");
+        //    output.Add($"{indentation}  </{node.Tag}>");
 
-            return output;
-        }   
+        //    return output;
+        //}   
     }
 }
