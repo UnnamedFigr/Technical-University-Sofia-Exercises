@@ -16,7 +16,11 @@
             Node htmlNode = parser.GetRootNode();
             QueryHandler handler = new QueryHandler(htmlNode);
 <<<<<<< HEAD
+<<<<<<< HEAD
             handler.HandleQuery("PRINT //");
+=======
+            handler.HandleQuery("PRINT //html");
+>>>>>>> f0a4729 (Added new project)
 =======
             handler.HandleQuery("PRINT //html");
 >>>>>>> f0a4729 (Added new project)
