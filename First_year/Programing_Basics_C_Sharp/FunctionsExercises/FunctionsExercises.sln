@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1705.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowersIterativeMethod", "PowersIterativeMethod\PowersIterativeMethod.csproj", "{71F87562-1614-47E0-B890-54CEFE3040F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowersRecursiveMethod", "PowersRecursiveMethod\PowersRecursiveMethod.csproj", "{B0E05C77-A093-43A1-943B-775E0CDEF9AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumber", "PrimeNumber\PrimeNumber.csproj", "{6F8BC71C-BB49-4374-9D56-5F2937944D49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PositiveNumberOutput", "PositiveNumberOutput\PositiveNumberOutput.csproj", "{395C3DFC-48F6-4449-8564-1C0DBDD81215}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71F87562-1614-47E0-B890-54CEFE3040F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71F87562-1614-47E0-B890-54CEFE3040F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71F87562-1614-47E0-B890-54CEFE3040F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71F87562-1614-47E0-B890-54CEFE3040F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0E05C77-A093-43A1-943B-775E0CDEF9AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0E05C77-A093-43A1-943B-775E0CDEF9AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0E05C77-A093-43A1-943B-775E0CDEF9AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0E05C77-A093-43A1-943B-775E0CDEF9AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F8BC71C-BB49-4374-9D56-5F2937944D49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F8BC71C-BB49-4374-9D56-5F2937944D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F8BC71C-BB49-4374-9D56-5F2937944D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F8BC71C-BB49-4374-9D56-5F2937944D49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{395C3DFC-48F6-4449-8564-1C0DBDD81215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{395C3DFC-48F6-4449-8564-1C0DBDD81215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{395C3DFC-48F6-4449-8564-1C0DBDD81215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{395C3DFC-48F6-4449-8564-1C0DBDD81215}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A1ED4B5A-D66D-47FF-882C-EFF909806C96}
+	EndGlobalSection
+EndGlobal
