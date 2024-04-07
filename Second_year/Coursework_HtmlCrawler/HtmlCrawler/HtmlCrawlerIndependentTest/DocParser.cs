@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace HtmlCrawlerIndependentTest
 {
@@ -10,6 +12,8 @@ namespace HtmlCrawlerIndependentTest
     {
         private List<Node>? nodes;
         private Node? root;
+
+        public string Text;
 
         public void ParseHTML(string htmlContent)
         {
@@ -57,7 +61,7 @@ namespace HtmlCrawlerIndependentTest
                             Node current = nodes[nodes.Count - 1];
                             current.Children.Add(newNode);
                             nodes.Add(newNode);
-
+                            
                             ParseAttributes(tagContent, newNode);
 
                             if (htmlContent[endTagIndex - 1] == '/')
@@ -72,6 +76,7 @@ namespace HtmlCrawlerIndependentTest
                     int closingBracket = htmlContent.IndexOf(">", position);
                     position = closingBracket + 1;
                 }
+                
                 else
                 {
                     int nextTagIndex = htmlContent.IndexOf("<", position);

@@ -32,5 +32,7 @@ namespace HtmlCrawlerIndependentTest
             Content = "";
             this.isSelfClosing = false;
         }
+        
+
     }
 }
