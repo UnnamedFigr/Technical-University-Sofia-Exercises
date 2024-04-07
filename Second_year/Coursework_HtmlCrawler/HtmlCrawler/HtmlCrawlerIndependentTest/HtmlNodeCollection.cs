@@ -10,16 +10,16 @@ namespace HtmlCrawlerIndependentTest
 {
     public class HtmlNodeCollection : IList<HtmlNode>
     {
-        private readonly HtmlNode _parentNode;
+        private readonly HtmlNode _parentnode;
         private readonly List<HtmlNode> _items = new List<HtmlNode>();
 
-        public HtmlNodeCollection(HtmlNode parentNode) => _parentNode = parentNode;
+        public HtmlNodeCollection(HtmlNode parentNode) => _parentnode = parentNode;
         
         public HtmlNode ParentNode
         {
             get 
             {
-                return _parentNode; 
+                return _parentnode; 
             }
         }
 
@@ -68,7 +68,7 @@ namespace HtmlCrawlerIndependentTest
             _items.Add(item);
             if(setParent)
             {
-                item.ParentNode = _parentNode;
+                item.ParentNode = _parentnode;
             }
         }
 
@@ -146,7 +146,7 @@ namespace HtmlCrawlerIndependentTest
             HtmlNode prev = null;
             HtmlNode next = null;
             HtmlNode _oldnode = _items[index];
-            HtmlNode parentNode = _parentNode ?? _oldnode.ParentNode;
+            HtmlNode parentNode = _parentnode ?? _oldnode.ParentNode;
 
             if(index > 0)
             {
@@ -172,9 +172,9 @@ namespace HtmlCrawlerIndependentTest
             }
             _oldnode._prevnode = null;
             _oldnode._nextnode = null;
-            _oldnode._parentNode = null;
+            _oldnode._parentnode = null;
 
-            if(_parentNode != null)
+            if(_parentnode != null)
             {
                 parentNode.SetChanged();
             }
@@ -196,7 +196,7 @@ namespace HtmlCrawlerIndependentTest
             _items.Add(item);
             item._nextnode = null;
             item._prevnode = last;
-            item.SetParent(_parentNode);
+            item.SetParent(_parentnode);
             if (last == null) return;
             if (last == item) throw new InvalidProgramException("Unexpected Error");
 
@@ -215,7 +215,7 @@ namespace HtmlCrawlerIndependentTest
                 throw new InvalidProgramException("Unexpected error.");
             node._nextnode = first;
             node._prevnode = null;
-            node.SetParent(_parentNode);
+            node.SetParent(_parentnode);
 
             if (first != null)
                 first._prevnode = node;
@@ -256,11 +256,11 @@ namespace HtmlCrawlerIndependentTest
                 throw new InvalidProgramException("Unexpected error.");
 
             node._nextnode = next;
-            node.SetParent(_parentNode);
+            node.SetParent(_parentnode);
 
             oldnode._prevnode = null;
             oldnode._nextnode = null;
-            oldnode._parentNode = null;
+            oldnode._parentnode = null;
         }
         public int GetNodeIndex(HtmlNode node)
         {
@@ -271,43 +271,31 @@ namespace HtmlCrawlerIndependentTest
             return -1;
         }
 
-        //public IEnumerable<HtmlNode> Descendants()
-        //{
-        //    foreach (HtmlNode item in _items)
-        //        foreach (HtmlNode n in item.Descendants())
-        //            yield return n;
-        //}
+        public IEnumerable<HtmlNode> Descendants()
+        {
+            foreach (HtmlNode item in _items)
+                foreach (HtmlNode n in item.Descendants())
+                    yield return n;
+        }
 
-
-        //public IEnumerable<HtmlNode> Descendants(string name)
-        //{
-        //    foreach (HtmlNode item in _items)
-        //        foreach (HtmlNode n in item.Descendants(name))
-        //            yield return n;
-        //}
-
-        /// <summary>
-        /// Gets all first generation elements in collection
-        /// </summary>
-        /// <returns></returns>
+        public IEnumerable<HtmlNode> Descendants(string name)
+        {
+            foreach (HtmlNode item in _items)
+                foreach (HtmlNode n in item.Descendants(name))
+                    yield return n;
+        }
         public IEnumerable<HtmlNode> Elements()
         {
             foreach (HtmlNode item in _items)
                 foreach (HtmlNode n in item.ChildNodes)
                     yield return n;
         }
-
-        /// <summary>
-        /// Gets all first generation elements matching name
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        //public IEnumerable<HtmlNode> Elements(string name)
-        //{
-        //    foreach (HtmlNode item in _items)
-        //        foreach (HtmlNode n in item.Elements(name))
-        //            yield return n;
-        //}
+        public IEnumerable<HtmlNode> Elements(string name)
+        {
+            foreach (HtmlNode item in _items)
+                foreach (HtmlNode n in item.Elements(name))
+                    yield return n;
+        }
 
         /// <summary>
         /// All first generation nodes in collection

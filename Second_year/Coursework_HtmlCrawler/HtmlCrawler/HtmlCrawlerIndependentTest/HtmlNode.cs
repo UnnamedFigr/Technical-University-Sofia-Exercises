@@ -30,7 +30,7 @@ namespace HtmlCrawlerIndependentTest
         internal int _outerlength;
         private string _optimizedName;
         internal HtmlDocument _ownerdocument;
-        internal HtmlNode _parentNode;
+        internal HtmlNode _parentnode;
         internal HtmlNode _prevnode;
         internal HtmlNode _prevwithsamename;
         internal bool _starttag;
@@ -126,6 +126,8 @@ namespace HtmlCrawlerIndependentTest
         }
 
         public HtmlNode FirstChild { get => !HasChildNodes ? null : _childnodes[0]; }
+
+        public HtmlNode LastChild { get => !HasChildNodes ? null : _childnodes[_childnodes.Count - 1]; }
         public virtual string InnerHtml
         {
             get
@@ -323,7 +325,7 @@ namespace HtmlCrawlerIndependentTest
             return (flag & ElementFlag.CData) != 0;
         }
 
-        public static bool IsClosedNode(string name)
+        public static bool IsClosedElement(string name)
         {
             if (name == null)
                 throw new ArgumentNullException("name");
@@ -437,7 +439,7 @@ namespace HtmlCrawlerIndependentTest
         /// </summary>
         public HtmlDocument OwnerDocument {get => _ownerdocument; internal set => _ownerdocument = value; }
 
-        public HtmlNode ParentNode { get => _parentNode; internal set => _parentNode = value; }
+        public HtmlNode ParentNode { get => _parentnode; internal set => _parentnode = value; }
         public HtmlNode PreviousSibling { get => _prevnode; internal set => _prevnode = value; }
 
         public string XPath
@@ -598,13 +600,57 @@ namespace HtmlCrawlerIndependentTest
             }
         }
 
-
-
         private void UpdateHtml()
         {
             _innerhtml = WriteContentTo();
             _outerhtml = WriteTo();
             _changed = false;
+        }
+
+        public IEnumerable<HtmlNode> Ancestors(string name)
+        {
+            for (HtmlNode n = ParentNode; n != null; n = n.ParentNode)
+                if (n.Name == name)
+                    yield return n;
+        }
+
+        public IEnumerable<HtmlNode> AncestorsAndSelf()
+        {
+            for (HtmlNode n = this; n != null; n = n.ParentNode)
+                yield return n;
+        }
+        public IEnumerable<HtmlNode> AncestorsAndSelf(string name)
+        {
+            for (HtmlNode n = this; n != null; n = n.ParentNode)
+                if (n.Name == name)
+                    yield return n;
+        }
+        public HtmlNode AppendChild(HtmlNode newChild)
+        {
+            if (newChild == null)
+            {
+                throw new ArgumentNullException("newChild");
+            }
+
+            ChildNodes.Append(newChild);
+
+            var parentnode = _parentnode;
+            HtmlDocument lastOwnerDocument = null;
+            while (parentnode != null)
+            {
+                if (parentnode.OwnerDocument != lastOwnerDocument)
+                {
+                    parentnode.OwnerDocument.SetIdForNode(newChild, newChild.GetId());
+                    parentnode.SetChildNodesId(newChild);
+                    lastOwnerDocument = parentnode.OwnerDocument;
+                }
+
+                parentnode = parentnode._parentnode;
+            }
+
+
+            SetChanged();
+            return newChild;
         }
     }
 }
