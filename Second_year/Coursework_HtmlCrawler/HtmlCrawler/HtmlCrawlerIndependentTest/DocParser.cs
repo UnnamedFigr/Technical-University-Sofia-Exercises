@@ -8,121 +8,58 @@ namespace HtmlCrawlerIndependentTest
 {
     public class DocParser
     {
-        private List<Node>? nodes;
-        private Node? root;
+        private NodeCollection _items;
+        private Node? _documentnode;
+        private int index;
+        private int _c;
+        internal Node _currentnode;
+        
+        public string Text { get; set; }
 
-        public void ParseHTML(string htmlContent)
+        public DocParser(string path)
         {
-            root = new Node("html");
-            nodes = new List<Node>();
-            nodes.Add(root);
+            StreamReader sr  = new StreamReader(path);
+            Text = sr.ReadToEnd();
+        }
 
-            int position = 0;
-            int length = htmlContent.Length;
-
-            while (position < length)
+        public void Parse(string htmlContent)
+        {
+            while (index < Text.Length)
             {
-                if (htmlContent[position] == '<')
-                {
-                    if (htmlContent[position + 1] == '/')
-                    {
-                        int endTagIndex = position + 2;
-                        while (endTagIndex < length && htmlContent[endTagIndex] != '>')
-                        {
-                            endTagIndex++;
-                        }
-
-                        string tagName = htmlContent.Substring(position + 2, endTagIndex - position - 2);
-
-                        if (nodes.Count > 1 && nodes[nodes.Count - 1].Tag == tagName)
-                        {
-                            nodes.RemoveAt(nodes.Count - 1);
-                        }
-                    }
-                    else
-                    {
-                        int endTagIndex = position + 1;
-                        while (endTagIndex < length && htmlContent[endTagIndex] != '>')
-                        {
-                            endTagIndex++;
-                        }
-
-                        string tagContent = htmlContent.Substring(position + 1, endTagIndex - position - 1);
-
-
-                        string tagName = GetTagName(tagContent);
-                        if (tagName != null)
-                        {
-                            Node newNode = new Node(tagName);
-                            Node current = nodes[nodes.Count - 1];
-                            current.Children.Add(newNode);
-                            nodes.Add(newNode);
-
-                            ParseAttributes(tagContent, newNode);
-
-                            if (htmlContent[endTagIndex - 1] == '/')
-                            {
-                                
-                                newNode.isSelfClosing = true;
-                                nodes.RemoveAt(nodes.Count - 1);
-                            }
-                        }
-                    }
-
-                    int closingBracket = htmlContent.IndexOf(">", position);
-                    position = closingBracket + 1;
-                }
-                else
-                {
-                    int nextTagIndex = htmlContent.IndexOf("<", position);
-                    string text = nextTagIndex != -1 ? htmlContent.Substring(position, nextTagIndex - position) : htmlContent.Substring(position);
-
-                    if (!IsWhitespace(text))
-                    {
-                        Node current = nodes[nodes.Count - 1];
-                        current.Content += text;
-                    }
-                    if (nextTagIndex == -1) break;
-
-                    position = nextTagIndex;
-                }
+                 _c = Text[index++];
             }
 
         }
-        public Node GetRootNode()
+
+        enum ParseState
         {
-            if (root == null)
-            {
-                throw new Exception("Root node is null!");
-            }
-            return root.Children[0];
+            BetweenTag,
+            Text
         }
-        private string GetTagName(string tagContent)
+        //private string GetTagName(string tagContent)
+        //{
+        //    int index = 0;
+        //    while (index < tagContent.Length && !char.IsWhiteSpace(tagContent[index]) && tagContent[index] != '>')
+        //    {
+        //        index++;
+        //    }
+
+        //    if (index == 0)
+        //    {
+        //        return null;
+        //    }
+
+        //    return tagContent.Substring(0, index);
+        //}
+
+        private bool IsWhitespace(int c)
         {
-            int index = 0;
-            while (index < tagContent.Length && !char.IsWhiteSpace(tagContent[index]) && tagContent[index] != '>')
+            if ((c == 10) || (c == 13) || (c == 32) || (c == 9))
             {
-                index++;
+                return true;
             }
 
-            if (index == 0)
-            {
-                return null;
-            }
-
-            return tagContent.Substring(0, index);
-        }
-
-        private bool IsWhitespace(string text)
-        {
-            foreach (char c in text)
-            {
-                if (!char.IsWhiteSpace(c) && c != '\0')
-                {
-                    return false;
-                }
-            }
-            return true;
+            return false;
         }
 
         private void ParseAttributes(string tagContent, Node node)
@@ -179,56 +116,56 @@ namespace HtmlCrawlerIndependentTest
                 index = valueEndIndex + 1;
             }
         }
-        public string GetFullHtmlContent(Node node)
-        {
-            StringBuilder fullContent = new StringBuilder();
-            TraverseAndConcatenate(node, fullContent);
-            return fullContent.ToString();
+        //public string GetFullHtmlContent(Node node)
+        //{
+        //    StringBuilder fullContent = new StringBuilder();
+        //    TraverseAndConcatenate(node, fullContent);
+        //    return fullContent.ToString();
         }
-        private void TraverseAndConcatenate(Node node, StringBuilder fullContent, int depth = 0)
-        {
-            if (node != null)
-            {
-                fullContent.Append(new string(' ', depth * 4));
-                fullContent.Append($"<{node.Tag}");
-                if(node.Attributes.Count > 0)
-                {
-                    foreach(Attribute attribute in node.Attributes)
-                    {
-                        fullContent.Append($" {attribute.Key}='{attribute.Value}'");
-                    }
-                }
-                fullContent.Append('>');
+        //private void TraverseAndConcatenate(Node node, StringBuilder fullContent, int depth = 0)
+        //{
+        //    if (node != null)
+        //    {
+        //        fullContent.Append(new string(' ', depth * 4));
+        //        fullContent.Append($"<{node.Tag}");
+        //        if(node.Attributes.Count > 0)
+        //        {
+        //            foreach(Attribute attribute in node.Attributes)
+        //            {
+        //                fullContent.Append($" {attribute.Key}='{attribute.Value}'");
+        //            }
+        //        }
+        //        fullContent.Append('>');
 
-                if(!string.IsNullOrEmpty(node.Content))
-                {
-                    fullContent.Append(node.Content);
-                }
+        //        if(!string.IsNullOrEmpty(node.Content))
+        //        {
+        //            fullContent.Append(node.Content);
+        //        }
 
-                if(node.Children.Count > 0)
-                {
-                    fullContent.AppendLine();
-                }
+        //        if(node.Children.Count > 0)
+        //        {
+        //            fullContent.AppendLine();
+        //        }
 
-                foreach(Node child in node.Children)
-                {
-                    TraverseAndConcatenate(child, fullContent, depth + 1);
-                    fullContent.AppendLine();
-                }
-                if(node.Children.Count > 0)
-                {
-                    /*fullContent.AppendLine();  Commenting this fixed the problem with spaces between the text content and the closing tags :)*/
-                    fullContent.Append(new string(' ', depth * 4));
-                }
-                if (node.isSelfClosing == false)
-                {
-                    fullContent.Append($"</{node.Tag}>");
-                }
-                //if (node.Children.Count != 0)
-                //{
-                //    fullContent.AppendLine();
-                //}   
-            }
-        }
+        //        foreach(Node child in node.Children)
+        //        {
+        //            TraverseAndConcatenate(child, fullContent, depth + 1);
+        //            fullContent.AppendLine();
+        //        }
+        //        if(node.ChildrenNode.Count > 0)
+        //        {
+        //            /*fullContent.AppendLine();  Commenting this fixed the problem with spaces between the text content and the closing tags :)*/
+        //            fullContent.Append(new string(' ', depth * 4));
+        //        }
+        //        if (node.isSelfClosing == false)
+        //        {
+        //            fullContent.Append($"</{node.Tag}>");
+        //        }
+        //        //if (node.Children.Count != 0)
+        //        //{
+        //        //    fullContent.AppendLine();
+        //        //}   
+        //    }
+        //}
     }
 }
