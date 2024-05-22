@@ -1,53 +1,97 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Моят Магазин</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Home page</title>
 </head>
 <body>
-    <h1>Добре дошли в нашия магазин</h1>
-    <div class="products-container">   
-        <div class="link-wrapper">  
-            <a href="product1.html">
-                <div class="product-card">
-                    <img src="photos/shoes1.png" alt="Продукт 1">
-                    <p>Кратко описание на Продукт 1</p>
-                    <p>Цена: 100 лв</p>           
+    <header>
+        <h1>E-Commerce Platform</h1>
+        <ul class="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#products">Shop</a></li>
+        </ul>
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+    <section class="main-section">
+        <div class="main-text-box">
+            <h5>In progress</h5>
+            <h1>My kick's website</h1>
+            <p>Interactive website for fashion trainers</p>
+            <a href="#products" class="main-btn">show now</a>
+        </div>
+       
+    </section>
+    <section class="product-list">
+        <div class="product-text">
+            <h2>Our products</h2>
+            <hr>
+        </div>
+        <div class="products" id="products">
+            <div class="row">
+                <a href="product1.html"><img src="photos/shoes1.png" alt="obuvki1"></a>
+                <div class="product-text">
+                    <h5>Sale</h5> 
                 </div>
-            </a>
-        </div>  
-        <div class="link-wrapper">
-            <a href="#">
-                <div class="product-card">
-                    <img src="photos/shoes1.png" alt="Продукт 2">
-                    <p>Кратко описание на Продукт 2</p>
-                    <p>Цена: 200 лв</p>
+                <div class="price">
+                    <h4>Nike Running Shoes</h4>
+                    <p>Suitible for Running</p>
+                    <p>90$</p>
                 </div>
-            </a>
+            </div>
+            <div class="row">
+                <a href="product2.html"><img src="photos/shoes2.png" alt="obuvki2"></a>
+                <div class="product-text">
+                    <h5>Sale</h5> 
+                </div>
+                <div class="price">
+                    <h4>Nike Giannis '5'</h4>
+                    <p>Suitible for Basketball</p>
+                    <p>90$</p>
+                </div>
+            </div>
+            <div class="row">
+                <a href="product3.html"><img src="photos/shoes3.png" alt="obuvki3"></a>
+                <div class="product-text">
+                    <h5>Sale</h5> 
+                </div>
+                <div class="price">
+                    <h4>Nike React Dynamcis</h4>
+                    <p>Suitible for runners</p>
+                    <p>90$</p>
+                </div>
+            </div>
+            <div class="row">
+                <a href="product4.html"><img src="photos/shoes4.png" alt="obuvki4"></a>
+                <div class="product-text">
+                    <h5>Sale</h5> 
+                </div>
+                <div class="price">
+                    <h4>Nike Air Max Plus</h4>
+                    <p>Suitible for everyday wear</p>
+                    <p>90$</p>
+                </div>
+            </div>
+            <div class="row">
+                <a href="product5.html"><img src="photos/shoes5.png" alt="obuvki5"></a>
+                <div class="product-text">
+                    <h5>Sale</h5> 
+                </div>
+                <div class="price">
+                    <h4>Nike Dunk Low</h4>
+                    <p>Suitible for everyday</p>
+                    <p>90$</p>
+                </div>
+            </div>
         </div>
-        <div class="product-card">
-            <h2>Продукт 3</h2>
-            <img src="images/product3.jpg" alt="Продукт 3">
-            <p>Кратко описание на Продукт 3</p>
-            <p>Цена: 300 лв</p>
-            <a href="product3.html">Виж повече</a>
-        </div>
-        <div class="product-card">
-            <h2>Продукт 4</h2>
-            <img src="images/product4.jpg" alt="Продукт 4">
-            <p>Кратко описание на Продукт 4</p>
-            <p>Цена: 400 лв</p>
-            <a href="product4.html">Виж повече</a>
-        </div>
-        <div class="product-card">
-            <h2>Продукт 5</h2>
-            <img src="images/product5.jpg" alt="Продукт 5">
-            <p>Кратко описание на Продукт 5</p>
-            <p>Цена: 500 лв</p>
-            <a href="product5.html">Виж повече</a>
-        </div>
-    </div>
+    </section>
+
+    <script src="index.js"></script>
 </body>
 </html>

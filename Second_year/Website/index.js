@@ -1,11 +1,14 @@
+let header = document.querySelector("header");
+window.addEventListener("scroll", 
+    function() {
+        header.classList.toggle("sticky", this.window.scrollY > 0);
+    }
+)
 
-function greet(name) {
-    console.log('Hello ' + name);
+let menu = document.querySelector('#menu-icon');
+let navmenu = document.querySelector('.nav-menu');
+
+menu.onclick = () => {
+    menu.classList.toggle('bx-x');
+    navmenu.classList.toggle('open');   
 }
-greet('Martines');
-function square(num)
-{
-    return num * num;
-}
-let sqrVal = square(2);
-console.log(sqrVal);
