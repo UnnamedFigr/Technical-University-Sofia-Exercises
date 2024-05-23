@@ -15,50 +15,66 @@
         <h1>E-Commerce Platform</h1>
         <ul class="nav-menu">
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html">Shop</a></li>
+            <li><a href="index.html#products">Shop</a></li>
         </ul>
         <div class="bx bx-menu" id="menu-icon"></div>
     </header>
 
     <div class="product-section-container">
         <section class="product-main">
-        <div class="product-photo">
-        <img src="photos/shoes1.png" alt="Продукт 1">
-        </div>
-        <div class="main-heading">
-            <h1>Nike Zoom</h1>
-            <h3>Suitible for runners</h3>
-            <p>90$</p>
-        </div>
+            <div class="product-photo">
+                <img src="photos/shoes1.png" alt="Продукт 1">
+            </div>
+            <div class="main-heading">
+                <h1>Nike Zoom</h1>
+                <h3>Suitable for runners</h3>
+                <p>90$</p>
+            </div>
         </section>
         <section class="product-description">
-        <h2>Description</h2>
-        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, nostrum.</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, exercitationem adipisci? Quidem similique iure voluptate ad earum, saepe a ratione consequuntur, totam autem eaque provident suscipit minus facilis numquam aut est possimus veniam. Exercitationem veritatis nulla numquam id, aliquam minima quas totam debitis dignissimos. Excepturi, adipisci soluta officiis optio praesentium dolor maiores? Expedita voluptatem obcaecati iusto exercitationem nisi aut dignissimos voluptatum molestiae vitae? Natus aliquid dignissimos vero repudiandae! Iste ex iusto porro quaerat odio, nesciunt officia ut omnis molestias? Doloribus aperiam, non voluptate a corporis quis, fuga, architecto repudiandae dolorem iusto voluptatem pariatur voluptas ut quos magni consequuntur ipsa libero.</p>        
+            <h2>Description</h2>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, nostrum.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, exercitationem adipisci? Quidem similique iure voluptate ad earum, saepe a ratione consequuntur, totam autem eaque provident suscipit minus facilis numquam aut est possimus veniam. Exercitationem veritatis nulla numquam id, aliquam minima quas totam debitis dignissimos. Excepturi, adipisci soluta officiis optio praesentium dolor maiores? Expedita voluptatem obcaecati iusto exercitationem nisi aut dignissimos voluptatum molestiae vitae? Natus aliquid dignissimos vero repudiandae! Iste ex iusto porro quaerat odio, nesciunt officia ut omnis molestias? Doloribus aperiam, non voluptate a corporis quis, fuga, architecto repudiandae dolorem iusto voluptatem pariatur voluptas ut quos magni consequuntur ipsa libero.</p>
         </section>
-        
+
         <section>
-            <h2>Закупуване на продукта</h2>
-            <form>
-                <label for="name">Име:</label>
-                <input type="text" id="name" name="name">
-                <label for="address">Адрес:</label>
-                <input type="text" id="address" name="address">
-                <button type="submit">Изпращане</button>
+            <h2>Make a purchase</h2>
+            <form id="purchase-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+                <button type="submit">Send it</button>
             </form>
         </section>
-        
+
         <section>
-            <h2>Потребителски ревюта</h2>
-            <div class="review">
-                <p>Много хубав продукт!</p>
+            <h2>Reviews</h2>
+            <div id="reviews">
+                <div class="review-card">
+                    <div class="review-header">
+                        <p>Много хубав продукт!</p>
+                        <div class="stars">
+                            <span>★★★★★</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        
-            <h3>Добавяне на ревю</h3>
-            <form>
-                <label for="comment">Коментар:</label>
-                <textarea id="comment" name="comment"></textarea>
-                <button type="submit">Изпращане</button>
+
+            <h3>Add review</h3>
+            <form id="review-form">
+                <label for="rating">Rate(0-5):</label>
+                <select id="rating" name="rating">
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                    <option value="0">0</option>
+                </select>
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" required></textarea>
+                <button type="submit">Send it</button>
             </form>
         </section>
     </div>

@@ -38,27 +38,43 @@
         </section>
         
         <section>
-            <h2>Закупуване на продукта</h2>
-            <form>
-                <label for="name">Име:</label>
-                <input type="text" id="name" name="name">
-                <label for="address">Адрес:</label>
-                <input type="text" id="address" name="address">
-                <button type="submit">Изпращане</button>
+            <h2>Make a purchase</h2>
+            <form id="purchase-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+                <button type="submit">Send it</button>
             </form>
         </section>
-        
+
         <section>
-            <h2>Потребителски ревюта</h2>
-            <div class="review">
-                <p>Много хубав продукт!</p>
+            <h2>Reviews</h2>
+            <div id="reviews">
+                <div class="review-card">
+                    <div class="review-header">
+                        <p>Много хубав продукт!</p>
+                        <div class="stars">
+                            <span>★★★★★</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        
-            <h3>Добавяне на ревю</h3>
-            <form>
-                <label for="comment">Коментар:</label>
-                <textarea id="comment" name="comment"></textarea>
-                <button type="submit">Изпращане</button>
+
+            <h3>Add review</h3>
+            <form id="review-form">
+                <label for="rating">Rate(0-5):</label>
+                <select id="rating" name="rating">
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                    <option value="0">0</option>
+                </select>
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" required></textarea>
+                <button type="submit">Send it</button>
             </form>
         </section>
     </div>

@@ -232,3 +232,59 @@ header.sticky{
     font-style: italic;
     font-size: 20px;
 }
+
+/* forms css */
+form {
+    margin: 20px 0;
+}
+
+label {
+    display: block;
+    margin: 5px 0;
+}
+
+input, textarea, select {
+    width: 75%;
+    padding: 10px;
+    margin: 5px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    display:block;
+    color: #111;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    border: 2px solid black;
+    padding: 12px 18px;
+    transition: all .42 ease;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.review-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 50%;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stars span {
+    color: gold;
+    font-size: 1.2em;
+}
