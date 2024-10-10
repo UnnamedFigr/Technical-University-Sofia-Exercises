@@ -1,0 +1,5 @@
+When you enter:
+PRINT //HTML/BodY - it outputs root tag doesn't match
+The idea is to adjust the case sensetivity. No matter input capitalization.
+- Also the exceptions should give out clearer outputs.
+- When you don't specify a command like PRINT it throws an exception. The exception should be caught and give put string message
