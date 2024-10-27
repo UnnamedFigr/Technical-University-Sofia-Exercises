@@ -33,6 +33,7 @@ namespace HtmlCrawlerIndependentTest
             Content = "";
             this.isSelfClosing = false;
         }
+<<<<<<< HEAD
 
         public string Tag { get; set; }
         public string Content { get; set; }
@@ -116,5 +117,9 @@ namespace HtmlCrawlerIndependentTest
                 if (node.Tag == name)
                     yield return node;
         }
+=======
+        
+
+>>>>>>> a2b61791e2931babd8934849aaf9b5be242194ad
     }
 }

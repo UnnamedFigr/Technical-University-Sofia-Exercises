@@ -18,7 +18,9 @@ namespace HtmlCrawlerIndependentTest
         
         public string Text { get; set; }
 
-        public DocParser(string path)
+        public string Text;
+
+        public void ParseHTML(string htmlContent)
         {
             StreamReader sr  = new StreamReader(path);
             Text = sr.ReadToEnd();
@@ -28,7 +30,71 @@ namespace HtmlCrawlerIndependentTest
         {
             while (index < Text.Length)
             {
-                 _c = Text[index++];
+                if (htmlContent[position] == '<')
+                {
+                    if (htmlContent[position + 1] == '/')
+                    {
+                        int endTagIndex = position + 2;
+                        while (endTagIndex < length && htmlContent[endTagIndex] != '>')
+                        {
+                            endTagIndex++;
+                        }
+
+                        string tagName = htmlContent.Substring(position + 2, endTagIndex - position - 2);
+
+                        if (nodes.Count > 1 && nodes[nodes.Count - 1].Tag == tagName)
+                        {
+                            nodes.RemoveAt(nodes.Count - 1);
+                        }
+                    }
+                    else
+                    {
+                        int endTagIndex = position + 1;
+                        while (endTagIndex < length && htmlContent[endTagIndex] != '>')
+                        {
+                            endTagIndex++;
+                        }
+
+                        string tagContent = htmlContent.Substring(position + 1, endTagIndex - position - 1);
+
+
+                        string tagName = GetTagName(tagContent);
+                        if (tagName != null)
+                        {
+                            Node newNode = new Node(tagName);
+                            Node current = nodes[nodes.Count - 1];
+                            current.Children.Add(newNode);
+                            nodes.Add(newNode);
+                            
+                            ParseAttributes(tagContent, newNode);
+
+                            if (htmlContent[endTagIndex - 1] == '/')
+                            {
+                                
+                                newNode.isSelfClosing = true;
+                                nodes.RemoveAt(nodes.Count - 1);
+                            }
+                        }
+                    }
+
+                    int closingBracket = htmlContent.IndexOf(">", position);
+                    position = closingBracket + 1;
+                }
+                
+                else
+                {
+                    int nextTagIndex = htmlContent.IndexOf("<", position);
+                    string text = nextTagIndex != -1 ? htmlContent.Substring(position, nextTagIndex - position) : htmlContent.Substring(position);
+
+                    if (!IsWhitespace(text))
+                    {
+                        Node current = nodes[nodes.Count - 1];
+                        current.Content += text;
+                    }
+                    if (nextTagIndex == -1) break;
+
+                    position = nextTagIndex;
+                }
             }
 
         }
